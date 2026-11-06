@@ -154,6 +154,11 @@ fi
 # Remote admin = HTTPS + password of an lpadmin user; plain viewing of printers/jobs needs none.
 cupsctl --share-printers --no-remote-any --remote-admin WebInterface=yes
 
+# Build the driver list now: on a Pi 1 it takes minutes, and the web UI's Add Printer page
+# would time out on the first visit otherwise
+echo "Building the printer driver list (a few minutes on a Pi 1)..."
+lpinfo -m | wc -l || warn "could not build the driver list"
+
 # ---------------------------------------------------------------- firewall (last, so nothing above is cut off)
 log "Firewall (LAN only)"
 LAN_CIDR="$(ip -4 route show dev "$IFACE" scope link | awk '$1 !~ /^169\.254/ && !f {print $1; f=1}')"
