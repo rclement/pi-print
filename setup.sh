@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-only
 # Bootstrap a Raspberry Pi (Raspberry Pi OS Lite, Bookworm) as a Wi-Fi/AirPrint print server
 # for a USB printer supported by Gutenprint.
 #

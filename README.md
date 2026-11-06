@@ -31,3 +31,7 @@ sudo bash /boot/firmware/bootstrap/setup.sh
   - Linux: the printer is usually discovered in the system printer settings. Otherwise add it by URL there, or run `sudo lpadmin -p <printer name> -E -v <printer URL> -m everywhere`
   - Windows: Settings > Bluetooth & devices > Printers & scanners > Add device. If it is not listed, "Add manually" > "Select a shared printer by name" and enter `http://<hostname>.local:631/printers/<printer name>`
 - Check jobs: open `https://<hostname>.local:631/` from the local network. No password to view jobs, the Raspberry Pi user password is asked for admin actions
+
+## License
+
+[GPL-3.0-only](LICENSE)
